@@ -5,7 +5,6 @@ import os
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 
-
 # Установка заголовка страницы
 st.set_page_config(page_title="Предсказание", layout="centered")
 st.title("Прогнозирование стоимости недвижимости")
@@ -28,19 +27,14 @@ else:
         # Выбор модели пользователем
         selected_model = st.selectbox("Выберите модель", model_files)
 
-        # Определяем тип файла
+        # Проверка наличия выбранной модели
         model_path = os.path.join(models_dir, selected_model)
-        if selected_model.endswith('.pkl'):
+        try:
             with open(model_path, "rb") as f:
                 model = pickle.load(f)
-            st.success(f"Модель '{selected_model}' (.pkl) загружена")
-        elif selected_model.endswith('.json'):
-            model = xgb.XGBRegressor()
-            model.load_model(model_path)
-            st.success(f"Модель '{selected_model}' (.json, XGBoost) загружена")
-        else:
-            st.error("Неподдерживаемый формат модели!")
-            model = None
+            st.success(f"Модель '{selected_model}' успешно загружена.")
+        except Exception as e:
+            st.error(f"Ошибка при загрузке модели: {e}")
 
         if model is not None:
             # Получаем список признаков модели
