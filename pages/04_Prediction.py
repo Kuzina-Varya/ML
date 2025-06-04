@@ -5,15 +5,6 @@ import os
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 
-# Выводим версии библиотек
-st.write(f"XGBoost version: {xgb.__version__}")
-
-# Проверка наличия модели
-model_path = 'models/stack_model.pkl'
-if os.path.exists(model_path):
-    st.success(f"Модель найдена по пути: {model_path}")
-else:
-    st.error(f"Модель не найдена по пути: {model_path}")
 
 # Установка заголовка страницы
 st.set_page_config(page_title="Предсказание", layout="centered")
