@@ -7,7 +7,6 @@ from sklearn.preprocessing import LabelEncoder
 
 # Выводим версии библиотек
 st.write(f"XGBoost version: {xgb.__version__}")
-st.write(f"Pickle version: {pickle.__version__}")
 
 # Проверка наличия модели
 model_path = 'models/stack_model.pkl'
