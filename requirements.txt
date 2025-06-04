@@ -6,3 +6,4 @@ xgboost
 Pillow
 scikit-learn
 numpy
+pickle
