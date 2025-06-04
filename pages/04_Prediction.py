@@ -27,14 +27,19 @@ else:
         # Выбор модели пользователем
         selected_model = st.selectbox("Выберите модель", model_files)
 
-        # Проверка наличия выбранной модели
+        # Определяем тип файла
         model_path = os.path.join(models_dir, selected_model)
-        try:
+        if selected_model.endswith('.pkl'):
             with open(model_path, "rb") as f:
                 model = pickle.load(f)
-            st.success(f"Модель '{selected_model}' успешно загружена.")
-        except Exception as e:
-            st.error(f"Ошибка при загрузке модели: {e}")
+            st.success(f"Модель '{selected_model}' (.pkl) загружена")
+        elif selected_model.endswith('.json'):
+            model = xgb.XGBRegressor()
+            model.load_model(model_path)
+            st.success(f"Модель '{selected_model}' (.json, XGBoost) загружена")
+        else:
+            st.error("Неподдерживаемый формат модели!")
+            model = None
 
         if model is not None:
             # Получаем список признаков модели
