@@ -6,7 +6,7 @@
 
 В рамках проекта выполнены следующие ключевые этапы:
 1. **Сбор и предобработка данных (EDA).**  
-   - Ознакомление с набором данных о ценах на недвижимость (Mumbai Houses).  
+   - Ознакомление с набором данных о ценах на недвижимость (mumbai_houses_task_EDA).  
    - Очистка, заполнение пропусков, преобразование категориальных признаков.  
    - Построение базовых визуализаций (гистограммы, ящиковые диаграммы, тепловая карта корреляций, pairplot).
 
@@ -57,7 +57,7 @@ ML/
 │   ├─ xgb_model.json               ← XGBoost Regressor  
 │   ├─ bagging_model.pkl            ← Bagging Regressor  
 │   ├─ stacking_model.pkl           ← Stacking Regressor  
-│   └─ mlp_model.pkl                ← MLPRegressor с подобранными гиперпараметрами  
+│   └─ mlp_model.pkl                ← MLPRegressor   
 │  
 ├─ figures/                        ← Графики и таблицы метрик  
 │   ├─ corr_matrix.png              ← Тепловая карта корреляций  
@@ -65,16 +65,16 @@ ML/
 │   ├─ boxplot_Bedrooms_price.png   ← Boxplot: bedrooms vs price  
 │   ├─ pairplot.png                 ← Pairplot ключевых признаков       
 │   ├─ polynomial_metrics_table.png    ← Таблица метрик (Poly)          
-│   ├─ boosting_metrics_table.png       ← Таблица метрик (GBR)          
-│   ├─ xgb_metrics_table.png            ← Таблица метрик (XGB)          
-│   ├─ bagging_metrics_table.png         ← Таблица метрик (Bagging)          
-│   ├─ stacking_metrics_table.png         ← Таблица метрик (Stacking)                
-│   └─ mlp_metrics_table.png             ← Таблица метрик (MLP)  
+│   ├─ boosting_metrics_table.png      ← Таблица метрик (GBR)          
+│   ├─ xgb_metrics_table.png           ← Таблица метрик (XGB)          
+│   ├─ bagging_metrics_table.png       ← Таблица метрик (Bagging)          
+│   ├─ stacking_metrics_table.png      ← Таблица метрик (Stacking)                
+│   └─ mlp_metrics_table.png           ← Таблица метрик (MLP)  
 │  
 ├─ pages/                          ← Страницы многостраничного Streamlit-приложения  
-│   ├─ 01_AboutDeveloper.py                ← Страница с информацией о разработчике  
-│   ├─ 02_DatasetInfo.py                ← Страница с описанием набора данных и EDA  
-│   ├─ 03_Visualizations.py              ← Страница с визуализациями (Matplotlib, Seaborn)  
+│   ├─ 01_AboutDeveloper.py         ← Страница с информацией о разработчике  
+│   ├─ 02_DatasetInfo.py            ← Страница с описанием набора данных и EDA  
+│   ├─ 03_Visualizations.py         ← Страница с визуализациями (Matplotlib, Seaborn)  
 │   └─ 04_Prediction.py             ← Страница с интерфейсом для предсказания  
 │  
 └─app.py                          ← Точка входа для Streamlit: объединяет страницы через sidebar  
