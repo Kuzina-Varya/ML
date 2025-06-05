@@ -94,7 +94,6 @@ else:
                 st.subheader("Ввод параметров объекта недвижимости вручную")
 
                 area = st.number_input("Площадь (кв.м):", min_value=10.0, max_value=10000.0, value=50.0)
-                price = st.number_input("Цена (в рупиях):", min_value=0.0, max_value=10_000_000_000.0, value=5000000.0)
                 latitude = st.number_input("Ширина (latitude):", min_value=-90.0, max_value=90.0, value=19.0760)
                 longitude = st.number_input("Долгота (longitude):", min_value=-180.0, max_value=180.0, value=72.8777)
                 bedrooms = st.number_input("Количество спален:", min_value=1, max_value=10, value=2)
@@ -134,7 +133,6 @@ else:
 
                 # Добавление недостающих признаков
                 input_data = pd.DataFrame({
-                    'price': [price],
                     'area': [area],
                     'latitude': [latitude],
                     'longitude': [longitude],
