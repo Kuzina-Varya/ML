@@ -75,7 +75,7 @@ else:
                         # Предсказание по файлу
                         X = df_uploaded
                         predictions = model.predict(X)
-                        df_uploaded['predicted_trip_duration'] = predictions
+                        df_uploaded['predicted'] = predictions
                         st.download_button(
                             label="Скачать с предсказаниями",
                             data=df_uploaded.to_csv(index=False),
