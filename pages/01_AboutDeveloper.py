@@ -14,8 +14,8 @@ st.markdown("""
 </p>
 """, unsafe_allow_html=True)
 
-# Фото (если есть)
-# st.image("path_to_photo.jpg", caption="Фото студента", width=300)
+#Фото (если есть)
+st.image("nnlKausKnVY.jpg", caption="Фото студента", width=300)
 
 # Подвал
 st.markdown("---")
