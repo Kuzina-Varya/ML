@@ -59,7 +59,7 @@ else:
                         st.dataframe(df_uploaded.head())
 
                         # Обработка пропущенных значений
-                        df_uploaded = df_uploaded.fillna(0)  # Заполняем пропуски нулями
+                        df_uploaded = df_uploaded.fillna(0)  
 
                         # Преобразуем категориальные признаки в one-hot (если необходимо)
                         df_uploaded = pd.get_dummies(df_uploaded, drop_first=True)
@@ -70,7 +70,7 @@ else:
                             df_uploaded[col] = 0  # Добавляем недостающие признаки с нулевым значением
 
                         # Приводим порядок признаков к нужному
-                        df_uploaded = df_uploaded[model_columns]  # Применяем правильный порядок
+                        df_uploaded = df_uploaded[model_columns]  
 
                         # Предсказание по файлу
                         X = df_uploaded
@@ -85,7 +85,7 @@ else:
 
                         # Показываем первые 10 строк с предсказаниями
                         st.subheader("Предсказания для загруженных данных:")
-                        st.write(df_uploaded.head(10))  # Показываем 10 строк с предсказаниями
+                        st.write(df_uploaded.head(10))  
 
                     except Exception as e:
                         st.error(f"Ошибка при обработке файла: {e}")
@@ -157,10 +157,10 @@ else:
                 # Добавляем недостающие признаки с нулевыми значениями
                 missing_columns = set(model_columns) - set(input_data.columns)
                 for col in missing_columns:
-                    input_data[col] = 0  # Добавляем недостающие признаки с нулевым значением
+                    input_data[col] = 0  
 
                 # Приводим признаки в правильный порядок
-                input_data = input_data[model_columns]  # Применяем правильный порядок
+                input_data = input_data[model_columns]  
 
                 # Получаем предсказание
                 if st.button("Получить прогноз стоимости"):
